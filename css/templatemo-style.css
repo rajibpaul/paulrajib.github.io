@@ -591,3 +591,45 @@ h3.profile-title {
 #footer p.copyright-text a:hover {
   color: #6cc0f7;
 }
+
+
+/*---------------------------------------------------------
+ 5. Animation
+-------------------------------------------------------- */
+
+.wrapper{
+  display: inline-flex;
+}
+
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+}
+
+.dynamic-txts li{
+  color: #FC6D6D;
+  line-style: none;
+  font-size: :60px;
+  font-weight: 500;
+}
+
+.dynamic-txts li span{
+  position: relative;
+}
+
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width:  100%;
+  border-left:  2px solid #FC6D6D;
+  animation: typing 1.5s steps(10) infinite;
+}
+@keyframes typing{
+  100%{
+    left: 100%;
+    margin: 0 - 35ox 0 35px;
+  }
+
+}
+
