@@ -1,0 +1,1084 @@
+/* Global Styles */
+/* Reset some default styles that might affect scrolling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling for modern browsers */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    html {
+        scroll-behavior: auto; /* Disable native smooth scrolling in Safari */
+    }
+    
+    /* Ensure fixed header stays on top */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+    
+    /* Add padding to the body to account for fixed header */
+    body {
+        padding-top: 80px;
+    }
+}
+
+/* Research area styling */
+.research-area {
+    position: relative;
+    padding: 6rem 0 2rem; /* More padding at the top */
+    margin: 0 0 2rem;
+    scroll-margin-top: 80px; /* Space for fixed header */
+}
+
+/* Extra spacing for the first research area */
+#area1 {
+    padding-top: 8rem;
+    margin-top: 0;
+}
+
+/* Ensure headings have proper spacing */
+.research-area h2 {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    position: relative;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+/* Add padding to the main content to account for fixed header */
+main {
+    padding-top: 20px; /* Reduced from 80px to 20px */
+}
+
+/* Reset the padding for the research overview section */
+.research-overview {
+    padding-top: 1rem;
+}
+
+/* Ensure the navbar stays on top */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    /* Fix for Safari's fixed position behavior */
+    .safari-scroll-fix {
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    /* Ensure proper scrolling in Safari */
+    html, body {
+        height: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Fix for the first research area */
+    #area1 {
+        padding-top: 120px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure proper scrolling behavior */
+    .research-area {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.profile {
+    margin-bottom: 0;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;  /* Reduced from 18px to 0.5rem */
+}
+
+.title {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-top: 0;  /* Added to remove top margin */
+    margin-bottom: 0.5rem;  /* Adjusted for consistent spacing */
+    line-height: 1.2;  /* Added to control line height */
+}
+
+.department,
+.university {
+    color: var(--text-color);
+    margin: 0.1rem 0;
+    line-height: 1.2;
+}
+
+.contact-info {
+    margin: 0.25rem 0;
+}
+
+.contact-info p {
+    margin: 0.1rem 0;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem; /* Add small bottom margin */
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Section Styles */
+section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.00rem;
+    margin-bottom: 1.00rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem; /* Reduced from 1rem to 0.5rem */
+}
+
+section h1,
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* News Section */
+.news-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.news-item {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.date {
+    color: var(--secondary-color);
+    font-weight: 600;
+    min-width: 100px;
+}
+
+/* Research Section */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.research-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Publications Page */
+.publications-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.publication-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    color: var(--text-color);
+}
+
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-link:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+}
+
+.publication-filters {
+    margin-bottom: 2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.publication-entry {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+}
+
+.pub-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.pub-type.journal {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.pub-type.conference {
+    background-color: #3498db;
+    color: white;
+}
+
+.pub-type.workshop {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.pub-type.preprint {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.publication-entry h3 {
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.publication-entry p {
+    margin: 0.2rem 0;
+    line-height: 1.4;
+}
+
+.publications-list h2 {
+    margin: 1.5rem 0 0.8rem 0;
+    padding-bottom: 0.3rem;
+}
+
+.authors {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.venue {
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.publication-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pub-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pub-link:hover {
+    color: var(--primary-color);
+}
+
+.bibtex-content {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Research Page */
+.research-area {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    /* Add scroll padding to account for fixed header */
+    scroll-padding-top: 100px;
+    /* Ensure the element can be positioned at the top */
+    scroll-snap-align: start;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Disable transitions during programmatic scrolling */
+.smooth-scroll-active * {
+    transition: none !important;
+}
+
+/* Ensure the html element takes full height */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Add smooth scrolling for elements with IDs */
+:target {
+    scroll-margin-top: 100px; /* Adjust based on your header height */
+}
+
+html {   
+    scroll-padding-top: 100px;
+    /* Ensure the element can be positioned at the top */
+    scroll-snap-align: start;
+}
+
+/* Reset any negative margins that might be causing issues */
+#area1, #area2, #area3 {
+    margin-top: 0;
+    padding-top: 2rem;
+}
+
+.research-area h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.research-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.research-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.research-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f5f5f5;
+    min-height: 200px;
+}
+
+.research-image img[src="placeholder.png"] {
+    padding: 2rem;
+    background: #f8f9fa;
+    border: 1px dashed #dee2e6;
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.project-resources {
+    margin-top: 1rem;
+}
+
+.project-resources a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Funding Section */
+.funding-list {
+    list-style: none;
+}
+
+.funding-list li {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.funding-year {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile h1 {
+        font-size: 2rem;
+    }
+
+    .research-content {
+        grid-template-columns: 1fr;
+    }
+
+    .funding-list li {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .publication-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Teaching Page Styles */
+.teaching-philosophy {
+    background: var(--card-background);
+    padding: 2rem 4rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-content {
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.philosophy-content p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.philosophy-content ul {
+    padding-left: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.philosophy-content li {
+    margin-bottom: 0.75rem;
+    text-align: justify;
+    padding-right: 1rem;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.course-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-info {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.course-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-description {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.course-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.course-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.course-links a:hover {
+    color: var(--primary-color);
+}
+
+.course-list {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.semester {
+    margin-bottom: 2rem;
+}
+
+.semester h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.semester ul {
+    list-style: none;
+    padding: 0;
+}
+
+.semester li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.semester li:last-child {
+    border-bottom: none;
+}
+
+.course-code {
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.course-title {
+    flex: 1;
+}
+
+.course-archive {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.course-archive:hover {
+    color: var(--primary-color);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.resource-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-card li {
+    margin: 0.5rem 0;
+}
+
+.resource-card a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-card a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .course-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .semester li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .course-code {
+        min-width: auto;
+    }
+
+    .course-archive {
+        margin-top: 0.5rem;
+    }
+
+    .teaching-philosophy {
+        padding: 1.5rem;
+    }
+    
+    .philosophy-content {
+        max-width: 100%;
+    }
+}
+
+.email-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.email-link:hover {
+    color: var(--secondary-color);
+}
+
+.dept-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.dept-link:hover {
+    color: var(--secondary-color);
+}
+
+.univ-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.univ-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Students Page Styles */
+.students-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.students-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.prospective-students {
+    position: sticky;
+    top: 100px;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.student-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.student-photo {
+    width: 100px;
+    height: 100px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.student-photo i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.student-info {
+    flex: 1;
+}
+
+.student-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.student-degree {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin: 0.25rem 0;
+}
+
+.student-research, .student-position {
+    color: var(--text-color);
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.student-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.student-profile, .student-pub {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.student-profile:hover, .student-pub:hover {
+    color: var(--primary-color);
+}
+
+.prospective-students {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prospective-students h2 {
+    margin-bottom: 1.5rem;
+}
+
+.prospective-students ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.prospective-students li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.prospective-students li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+.highlight {
+    animation: highlightFade 2s ease-out;
+}
+
+@keyframes highlightFade {
+    0% { background-color: #fff3cd; }
+    100% { background-color: transparent; }
+}
+
+.title-rotator {
+    position: relative;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.title-rotator .title {
+    font-size: 1.15rem;
+    color: #222; /* Or use var(--primary-color) if defined */
+    text-align: center;
+    min-height: 1.5em;
+    letter-spacing: 0.5px;
+    border-right: 1px solid #222; /* Thinner and matches the name color */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    /* Optionally, add a slight animation for the cursor */
+    animation: blink-cursor 0.8s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { border-color: #222; }
+    50% { border-color: transparent; }
+}
